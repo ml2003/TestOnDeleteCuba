@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="single" transaction-type="RESOURCE_LOCAL">
+
+        <class>com.company.single.entity.Obj</class>
+        <class>com.company.single.entity.Dict</class>
+        <class>com.company.single.entity.Single</class>
+        <class>com.company.single.entity.Multi</class>
+    </persistence-unit>
+</persistence>

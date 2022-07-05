@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://multiEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.single.web.screens.multi">
+    <data>
+        <instance id="multiDc"
+                  class="com.company.single.entity.Multi">
+            <view extends="multi-view1">
+            </view>
+            <loader/>
+            <collection id="singleDc" property="single"/>
+
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="multiDc">
+            <column width="350px">
+                <textField id="nameField" property="name"/>
+                <textField id="titleField" property="title"/>
+            </column>
+        </form>
+        <groupBox id="siblgesBox" >
+            <table id="sinlgesTable" dataContainer="singleDc" width="100%" height="200px">
+                <actions>
+                    <action id="add" type="add"/>
+                    <action id="exclude" type="exclude"/>
+                </actions>
+                <columns>
+                    <column id="name"/>
+                    <column id="num"/>
+                    <column id="description"/>
+                </columns>
+                <buttonsPanel>
+                    <button action="sinlgesTable.add"/>
+                    <button action="sinlgesTable.exclude"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>
